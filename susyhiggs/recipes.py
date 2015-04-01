@@ -29,9 +29,3 @@ def plotCutflow(ntuplefile,workdir):
   cutflow.Draw()
   c.SaveAs('{}/canvas.pdf'.format(workdir))
   c.SaveAs('{}/canvas.png'.format(workdir))
-
-
-# function returns a list of result files that will be present in the working directory
-# that should be included in a recast response
-def recastResults():
-    return ['canvas.pdf','canvas.png','selection.log']
