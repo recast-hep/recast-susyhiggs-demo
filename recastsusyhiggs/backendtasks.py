@@ -41,7 +41,9 @@ def createNtup(jobguid,samplefile,samplename):
 @shared_task
 def downloadWithRucio(jobguid):
     workdir = 'workdirs/{}'.format(jobguid)
-    data = yaml.load(open('{}/inputs/recastinput.yaml'.format(workdir)))
+    yamlfileglob = glob.glob('{}/inputs/*.yaml'.format(workdir))
+    assert len(yamlfileglob) == 1
+    data = yaml.load(open(yamlfileglob[0]))
     samplelist = [data['sample dataset']]
     socketlog(jobguid,'downloading samples from rucio: {}'.format(samplelist))
     recipes.downloadWithRucio(samplelist,workdir)
