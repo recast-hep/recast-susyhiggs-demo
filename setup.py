@@ -23,6 +23,7 @@ setup(
   install_requires = [
     'Flask',
     'yoda',
+    'pyyaml',
   ],
   dependency_links = [
   ]
