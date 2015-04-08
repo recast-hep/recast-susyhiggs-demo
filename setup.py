@@ -21,7 +21,7 @@ setup(
         susyplot=susyhiggs.plot:plot
     ''',  
   install_requires = [
-    'Flask'
+    'Flask',
     'yoda',
   ],
   dependency_links = [
